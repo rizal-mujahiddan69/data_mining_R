@@ -3,6 +3,8 @@ library(ggplot2)
 
 # masukkan datasetku
 datasetku <- datasets::CO2
+summary(datasetku)
+
 # fungsi cuberoot
 cbrt <- function(x){return(x^(1/3))}
 # fungsi struge rule buat methode menentukan angka binning
