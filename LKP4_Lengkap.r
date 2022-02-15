@@ -1,4 +1,4 @@
-infotheokrasi <- system.file(package = "infotheokrasi")
+infotheokrasi <- system.file(package = "infotheo")
 if(infotheokrasi != ""){
   library(infotheo)
 }else{
@@ -22,6 +22,15 @@ if(visvisdat != ""){
   library(visdat)
 }
 
+ggg <- system.file(package = "ggplot2")
+if(ggg != ""){
+  library(ggplot2)
+}else{
+  install.packages("ggplot2")
+  library(ggplot2)
+}
+
+
 #NO 1
 dataset1 <- read.csv('Product.csv')
 md.pattern(dataset1)
@@ -36,8 +45,6 @@ dev.off()
 jpeg("mdvis_1.jpeg")
 vis_miss(dataset1) + theme(axis.text.x = element_text(angle=85))
 dev.off()
-
-
 
 
 #NO 2
@@ -57,7 +64,6 @@ dataset1$PriceGap <- abs(dataset1$ListPrice - dataset1$StandardCost)
 
 #NO4
 dataset2 <- read.csv("ProductSubcategory.csv")
-
 dataset12 <- merge(dataset1,dataset2)
 
 # Perlu di Prepocessing ulang dikarenakan 
@@ -81,7 +87,6 @@ vis_miss(dataset12) + theme(axis.text.x = element_text(angle=85))
 dev.off()
 
 dataset12 <- dataset12[,!(names(dataset12) %in% kolom_dt12_kosong)]
-
 
 jpeg("vis_miss_final.jpeg",quality=100)
 vis_miss(dataset12) + theme(axis.text.x = element_text(angle=85))
