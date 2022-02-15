@@ -9,7 +9,6 @@ if(visvisdat != ""){
   library(visdat)
 }
 
-
 #NO 1
 dataset1 <- read.csv('Product.csv')
 md.pattern(dataset1)
