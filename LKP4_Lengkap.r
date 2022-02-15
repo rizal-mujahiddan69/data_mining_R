@@ -1,6 +1,19 @@
-library(infotheo)
-library(mice)
-  
+infotheokrasi <- system.file(package = "infotheokrasi")
+if(infotheokrasi != ""){
+  library(infotheo)
+}else{
+  install.packages("infotheo")
+  library(infotheo)
+}
+
+tikus <- system.file(package = "mice")
+if(tikus != ""){
+  library(mice)
+}else{
+  install.packages("mice")
+  library(mice)
+}
+
 visvisdat <- system.file(package = "visdat")
 if(visvisdat != ""){
   library(visdat)
