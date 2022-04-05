@@ -11,8 +11,8 @@ ind <- sample(2,nrow(data_raisin),
 trainData <- data_raisin[ind == 1,]
 testData <- data_raisin[ind == 2,]
 
-write.csv(trainData,"trainData.csv")
-write.csv(testData,"testData.csv")
+write.csv(trainData,"trainData_LKP8.csv")
+write.csv(testData,"testData_LKP8.csv")
 
 svm_model <- svm(Class ~ . , data=trainData,gamma=10,cost=1)
 svm_pred <- predict(svm_model,testData)
